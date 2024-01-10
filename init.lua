@@ -72,3 +72,6 @@ vim.api.nvim_set_keymap(
   "<C-\\><C-n><cmd>2ToggleTerm direction=horizontal<CR>",
   { noremap = true, silent = true }
 )
+
+-- Setup css color highlight
+require("nvim-highlight-colors").setup({})

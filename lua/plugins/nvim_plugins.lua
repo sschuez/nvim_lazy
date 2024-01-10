@@ -4,6 +4,7 @@ return {
   { "tpope/vim-ragtag" },
   { "mg979/vim-visual-multi" },
   { "akinsho/toggleterm.nvim", version = "*", config = true },
+  { "brenoprata10/nvim-highlight-colors" },
   {
     "jackMort/ChatGPT.nvim",
     event = "VeryLazy",
