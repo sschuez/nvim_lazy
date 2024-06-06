@@ -7,10 +7,10 @@ return {
       require("chatgpt").setup({
         api_key_cmd = "bash /Users/stephenschuz/.config/print_api_key.sh",
         openai_params = {
-          model = "gpt-4-1106-preview",
+          model = "gpt-4o",
         },
         openai_edit_params = {
-          model = "gpt-4-1106-preview",
+          model = "gpt-4o",
         },
       })
     end,

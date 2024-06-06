@@ -1,21 +1,33 @@
 local cmp = require("cmp")
--- Keep track of whether autocomplete is enabled
-local cmp_enabled = true
--- Function to toggle the autocomplete functionality
+-- Keep track of whether autocomplete is enabled globally
+_G.cmp_enabled = true
+-- Function to toggle the autocomplete functionality globally
 local function toggle_cmp()
-  cmp_enabled = not cmp_enabled
-  if cmp_enabled then
-    -- Enable completion for the current buffer
-    cmp.setup.buffer({ enabled = true })
-    print("Autocomplete enabled")
+  _G.cmp_enabled = not _G.cmp_enabled
+  if _G.cmp_enabled then
+    -- Enable completion globally
+    cmp.setup({
+      -- Your default cmp setup configuration here
+      -- (Make sure to include all your sources and settings)
+    })
+    print("Autocomplete enabled globally")
   else
-    -- Disable completion for the current buffer
-    cmp.setup.buffer({ enabled = false })
-    print("Autocomplete disabled")
+    -- Disable completion globally
+    cmp.setup({
+      enabled = false,
+    })
+    print("Autocomplete disabled globally")
   end
 end
 -- Add the toggle command to Neovim
 vim.api.nvim_create_user_command("ToggleCmp", toggle_cmp, {})
+-- Set up an autocmd to apply the enabled/disabled state to each new buffer
+vim.api.nvim_create_autocmd("BufEnter", {
+  callback = function()
+    -- Apply the current global state to the entered buffer
+    cmp.setup.buffer({ enabled = _G.cmp_enabled })
+  end,
+})
 
 return {
 
