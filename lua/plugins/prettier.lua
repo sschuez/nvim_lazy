@@ -13,6 +13,7 @@ return {
         ["scss"] = { "prettier" },
         ["less"] = { "prettier" },
         ["html"] = { "prettier" },
+        ["eruby"] = { "erb_format" },
         ["json"] = { "prettier" },
         ["jsonc"] = { "prettier" },
         ["yaml"] = { "prettier" },
