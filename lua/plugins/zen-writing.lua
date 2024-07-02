@@ -46,11 +46,11 @@ return {
       },
       on_open = function(win)
         -- Run the script to increase font size
-        run_script("~/code/dotfiles/scripts/large_font.sh")
+        run_script("~/code/dotfiles/scripts/apply_zen_font_size.sh")
       end,
       on_close = function()
         -- Run the script to decrease font size
-        run_script("~/code/dotfiles/scripts/small_font.sh")
+        run_script("~/code/dotfiles/scripts/apply_previous_font_size.sh")
       end,
     },
   },
