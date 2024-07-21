@@ -26,7 +26,7 @@ return {
         ["markdown.mdx"] = { "prettier" },
         ["graphql"] = { "prettier" },
         ["handlebars"] = { "prettier" },
-        ["ruby"] = { "rubocop" },
+        -- ["ruby"] = { "rubocop" },
         ["sh"] = { "shfmt" },
         ["lua"] = { "stylua" },
       },
