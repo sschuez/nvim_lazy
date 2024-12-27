@@ -26,7 +26,13 @@ return {
         ["markdown.mdx"] = { "prettier" },
         ["graphql"] = { "prettier" },
         ["handlebars"] = { "prettier" },
-        -- ["ruby"] = { "rubocop" },
+        ["ruby"] = function()
+          if vim.fn.glob(".rubocop.yml") ~= "" then
+            return { "bundle_exec_rubocop" }
+          else
+            return { "rubocop" }
+          end
+        end,
         ["sh"] = { "shfmt" },
         ["lua"] = { "stylua" },
       },
